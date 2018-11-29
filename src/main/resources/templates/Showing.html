@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Showing</title>
+</head>
+<body>
+
+<h1>List of Products: </h1>
+
+<br>
+
+<table border="1" width="600">
+    <tr th:each="p : ${products}">
+
+        <td>
+            <span th:text="${p.productName}"></span>
+        </td>
+
+        <td>
+            <span th:text="${p.price}"></span>
+        </td>
+
+        <td>
+            <span th:text="${p.courency}"></span>
+        </td>
+
+
+        <td>
+            <input type="submit" value="Edit">
+        </td>
+
+    </tr>
+
+    <a href="/">Back</a>
+
+</table>
+</body>
+</html>
