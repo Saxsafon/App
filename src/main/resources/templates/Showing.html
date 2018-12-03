@@ -11,8 +11,8 @@
 <br>
 
 <table border="1" width="600">
-    <tr th:each="p : ${products}">
 
+    <tr th:each="p : ${products}">
         <td>
             <span th:text="${p.productName}"></span>
         </td>
@@ -25,15 +25,18 @@
             <span th:text="${p.courency}"></span>
         </td>
 
-
         <td>
+            <a th:href="@{'http://localhost:8080/edit/' + ${p.id}}">
             <input type="submit" value="Edit">
+            </a>
         </td>
 
     </tr>
 
-    <a href="/">Back</a>
+
+    <a href="/edit">Back</a>
 
 </table>
+
 </body>
 </html>

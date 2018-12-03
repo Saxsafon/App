@@ -6,15 +6,15 @@
 </head>
 <body>
 <h1>Do you copy?</h1>
-<form action="/" method="post">
+<form action="/showList" method="post">
     <label>Name of the product: </label>
-    <input type="text" name="productName" value="Mercedes"/>
+    <input type="text" name="productName" th:value="${product.productName}"/>
 
     <br>
     <br>
 
     <label>Price of the product: </label>
-    <input type="number" name="price" value="19990">
+    <input type="number" name="price" th:value="${product.price}">
 
     <br>
     <select name="courency">
@@ -24,6 +24,11 @@
     </select>
 
     <br>
+
+    <div th:if="${product.id}">
+
+        <input type="hidden" name="id" th:value="${product.id}">
+    </div>
 
     <input type="submit" value="Create">
 

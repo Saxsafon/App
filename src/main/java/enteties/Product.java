@@ -7,22 +7,17 @@ public class Product {
     private Courency courency;
 
 
-    public Product() {
-//        this.id = Long.parseLong(null);
-//        this.price = Double.parseDouble(null);
-//        this.courency = null;
-//        this.productName = null;
 
-    }
+
+    public Product() {}
+
 
     public Product(String productName, double price) {
         this.productName = productName;
         this.price = price;
-        // this.id = id;
     }
 
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

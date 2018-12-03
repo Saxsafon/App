@@ -15,23 +15,26 @@ public class ProductsRepository {
 
 
     public void save(Product product){
-        Long id = counter.incrementAndGet();
-//        Long id = Product.getId();
-//
-//        Product newProduct = product;
-//        if (id == null) {
-//            id = counter.incrementAndGet();
-//            newProduct.setId(id);
-//            System.out.println("ID: " + id);
-//        }
+        System.out.println("save()");
+        Long id = product.getId();
+        System.out.println("ID: " + id);
+        if (id == null) {
+            id = counter.incrementAndGet();
+            product.setId(id);
+        }
         System.out.println("id: " + id);
-        product.setId(id);
+
+        System.out.println(products.values());
         products.put(id, product);
         System.out.println(products.values());
     }
 
     public Collection<Product> getList(){
         return products.values();
+    }
+
+    public Product getById(Long id){
+        return products.get(id);
     }
 
 
